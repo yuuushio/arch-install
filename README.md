@@ -3,17 +3,17 @@ Some scripts for installing Arch Linux to my preferences.
 
 ## Usage
 ```bash
-wget https://github.com/yuuushio/arch-install/blob/main/chroot.sh
+curl -o chroot.sh https://raw.githubusercontent.com/yuuushio/arch-install/main/chroot.sh
 chmod +x *.sh
 ./chroot.sh
 ```
 ```bash
-wget https://github.com/yuuushio/arch-install/blob/main/config.sh
+curl -o config.sh https://raw.githubusercontent.com/yuuushio/arch-install/main/config.sh
 chmod +x *.sh
 ./config.sh
 ```
 ```bash
-wget https://github.com/yuuushio/arch-install/blob/main/post.sh
+curl -o post.sh https://raw.githubusercontent.com/yuuushio/arch-install/main/post.sh
 chmod +x *.sh
 ./post.sh
 ```
