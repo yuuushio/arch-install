@@ -17,10 +17,10 @@ done
 
 
 git clone https://github.com/yuuushio/dwm.git
-cd $repo;make;sudo make install;cd ..
+cd dwm;make;sudo make install;cd ..
 
 git clone https://github.com/yuuushio/dwmblocks.git
-cd $repo;make;sudo make install;cd ..
+cd dwmblocks;make;sudo make install;cd ..
 
 # XSessions and dwm.desktop
 if [[ ! -d /usr/share/xsessions ]]; then
