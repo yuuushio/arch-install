@@ -18,10 +18,10 @@ do
 done
 
 
-https://github.com/yuuushio/dwm.git
+git clone https://github.com/yuuushio/dwm.git
 cd $repo;make;sudo make install;cd ..
 
-https://github.com/yuuushio/dwmblocks.git
+git clone https://github.com/yuuushio/dwmblocks.git
 cd $repo;make;sudo make install;cd ..
 
 # XSessions and dwm.desktop
