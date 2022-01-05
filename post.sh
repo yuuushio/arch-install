@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo timedatectl set-ntp true
-sudo hwclock --systohc
 
 git clone https://aur.archlinux.org/yay.git
 cd yay;makepkg -si -noconfirm;cd;rm -r yay
