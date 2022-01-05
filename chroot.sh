@@ -14,8 +14,6 @@ mount /dev/${drive}3 /mnt
 mkdir -p /mnt/efi
 mount /dev/${drive}1 /mnt/efi
 
-pacstrap /mnt base base-devel linux linux-firmware vim man sudo amd-ucode
+pacstrap /mnt base linux
 
-genfstab -U /mnt >> /mnt/etc/fstab
-
-arch-chroot /mnt
+genfstab -U /mnt >> /mnt/etc/fstab; arch-chroot /mnt
