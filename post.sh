@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git clone https://aur.archlinux.org/yay.git
-cd yay;makepkg -si -noconfirm;cd;rm -r yay
+cd yay;makepkg -si --noconfirm;cd;rm -rf yay
 
 sudo pacman -S --noconfirm xorg ttf-dejavu git polkit-gnome lightdm lightdm-gtk-greeter
 
@@ -27,21 +27,23 @@ if [[ ! -d /usr/share/xsessions ]]; then
     sudo mkdir /usr/share/xsessions
 fi
 
-cat > ./temp << "EOF"
+cd /usr/share/xsessions
+sudo touch dwm.desktop
+sudo chown $USER dwm.desktop
+sudo cat > dwm.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Dwm
-Comment=Dynamic window manager
-Exec=~/.dwm/autostart.sj
+Comment=dwm
+Exec=dwm
 Icon=dwm
 Type=XSession
 EOF
-sudo cp ./temp /usr/share/xsessions/dwm.desktop;rm ./temp
 
 systemctl enable lightdm
 systemctl enable bluetooth
 
-yay -S downgrade otf-symbola nerd-fonts-complete typora-free lf-git timeshift jre ttf-ms-fonts virtualbox-ext-oracle visual-studio-code-bin ttf-mac-fonts libxft-bgra neovim-nightly-bin picom-jonaburg-git jdk powerline-fonts-git
+#yay -S downgrade otf-symbola nerd-fonts-complete typora-free lf-git timeshift jre ttf-ms-fonts virtualbox-ext-oracle visual-studio-code-bin ttf-mac-fonts libxft-bgra neovim-nightly-bin picom-jonaburg-git jdk powerline-fonts-git
 
 echo "---Configure LightDM; Restart PC---"
 
