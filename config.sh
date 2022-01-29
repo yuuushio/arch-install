@@ -14,7 +14,7 @@ echo "127.0.0.1	localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 ArchLite.localdomain ArchLite" >> /etc/hosts
 
-bash -c `pacman -Sy base-devel linux-firmware vim man sudo amd-ucode grub efibootmgr dosfstools mtools os-prober networkmanager network-manager-applet wireless_tools`
+pacman -S --no-confirm grub efibootmgr dosfstools mtools os-prober networkmanager network-manager-applet wireless_tools
 
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
