@@ -14,6 +14,10 @@ mount /dev/${drive}3 /mnt
 mkdir -p /mnt/efi
 mount /dev/${drive}1 /mnt/efi
 
-pacstrap /mnt base linux
+pacstrap /mnt base base-devel linux linux-firmware vim nano man sudo amd-ucode
 
-genfstab -U /mnt >> /mnt/etc/fstab; arch-chroot /mnt
+sleep 2
+
+genfstab -U /mnt >> /mnt/etc/fstab
+sleep 3
+arch-chroot /mnt
