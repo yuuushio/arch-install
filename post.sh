@@ -43,6 +43,8 @@ EOF
 systemctl enable lightdm
 systemctl enable bluetooth
 
+#sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+#sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 #yay -S downgrade otf-symbola nerd-fonts-complete typora-free lf-git timeshift jre ttf-ms-fonts virtualbox-ext-oracle visual-studio-code-bin ttf-mac-fonts libxft-bgra neovim-nightly-bin picom-jonaburg-git jdk powerline-fonts-git
 
 echo "---Configure LightDM; Restart PC---"
