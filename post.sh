@@ -1,11 +1,11 @@
 #!/bin/bash
 
 git clone https://aur.archlinux.org/yay.git
-cd yay;makepkg -si --noconfirm;cd;rm -rf yay
+cd yay;makepkg -si;cd;rm -rf yay
 
-sudo pacman -S --noconfirm xorg ttf-dejavu git polkit-gnome lightdm lightdm-gtk-greeter
+sudo pacman -S xorg ttf-dejavu git polkit-gnome lightdm lightdm-gtk-greeter
 
-sudo pacman -S --noconfirm arandr dmenu bash-completion bluez bluez-utils cups discord dunst ffmpegthumbnailer firefox firewalld gcolor3 gedit gzip hplip jupyter-notebook jupyterlab linux-headers lxappearance maim moreutils nautilus neofetch nfs-utils nitrogen nodejs npm ntfs-3g pamixer pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-media-session pipewire-pulse polkit-gnome pulsemixer python-pip qbittorrent redshift rofi sqlitebrowser sxiv texlive-most thunar vlc xclip zathura zathura-pdf-mupdf zsh
+sudo pacman -S arandr dmenu bash-completion bluez bluez-utils cups discord dunst ffmpegthumbnailer firefox firewalld gcolor3 gedit gzip hplip jupyter-notebook jupyterlab linux-headers lxappearance maim moreutils nautilus neofetch nfs-utils nitrogen nodejs npm ntfs-3g pamixer pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-media-session pipewire-pulse polkit-gnome pulsemixer python-pip qbittorrent redshift rofi sqlitebrowser sxiv texlive-most thunar vlc xclip zathura zathura-pdf-mupdf zsh tmux okular texstudio 
 
 cd
 repos=( "st" )
