@@ -5,9 +5,41 @@ cd yay;makepkg -si;cd;rm -rf yay
 
 sudo pacman -S xorg ttf-dejavu git polkit-gnome lightdm lightdm-gtk-greeter
 
-sudo pacman -S arandr dmenu bash-completion bluez bluez-utils cups discord dunst ffmpegthumbnailer firefox firewalld gcolor3 gedit gzip hplip jupyter-notebook jupyterlab linux-headers lxappearance maim moreutils nautilus neofetch nfs-utils nitrogen nodejs npm ntfs-3g pamixer pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-media-session pipewire-pulse polkit-gnome pulsemixer python-pip qbittorrent redshift rofi sqlitebrowser sxiv texlive-most thunar vlc xclip zathura zathura-pdf-mupdf zsh tmux okular texstudio 
+sudo pacman -S arandr dmenu bash-completion bluez bluez-utils cups discord \
+dunst ffmpegthumbnailer firefox firewalld gcolor3 gedit gzip hplip jupyter-notebook \
+jupyterlab linux-headers lxappearance maim moreutils nautilus neofetch nfs-utils \
+nitrogen nodejs npm ntfs-3g pamixer pavucontrol pipewire pipewire-alsa pipewire-jack \
+pipewire-media-session pipewire-pulse pulsemixer python-pip qbittorrent \
+redshift rofi sqlitebrowser sxiv texlive-most thunar vlc xclip zathura zathura-pdf-mupdf \
+zsh tmux okular texstudio 
+
+yay -S neovim-nightly-bin picom-jonaburg-git
+
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install typewritten theme
+git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
+ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
+ln -s "$ZSH_CUSTOM/themes/typewritten/async.zsh" "$ZSH_CUSTOM/themes/async"
+
 
 cd
+
+# -- install dots/configs
+git clone https://github.com/yuuushio/dots.git;cd dots
+
+mv dwmblocks ~/dwmblocks
+mv -f icons/default ~/.icons/default
+mv -f scripts ~/.dwm
+mv st ~/st
+mv -f typewritten.zsh ~/.oh-my-zsh/custom/themes/typewritten/typewritten.zsh
+mv -f picom.conf ~/.config/picom.conf
+mv -f nvim ~/.config/nvim
+mv nda ~/.themes/nda
+sudo mv bluetooth/main.conf /etc/bluetooth/main.conf
+sudo mv pipewire.conf /usr/share/pipewire/pipewire.conf
+# -----------------------
+
 repos=( "st" )
 for repo in ${repos[@]}
 do
@@ -18,9 +50,6 @@ done
 
 git clone https://github.com/yuuushio/dwm.git
 cd dwm;make;sudo make install;cd ..
-
-git clone https://github.com/yuuushio/dwmblocks.git
-cd dwmblocks;make;sudo make install;cd ..
 
 # XSessions and dwm.desktop
 if [[ ! -d /usr/share/xsessions ]]; then
