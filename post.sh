@@ -43,6 +43,8 @@ sudo mv pipewire.conf /usr/share/pipewire/pipewire.conf
 
 cd
 
+rm -rf dots
+
 #repos=( "st" )
 #for repo in ${repos[@]}
 #do
