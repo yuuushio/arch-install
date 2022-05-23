@@ -1,7 +1,4 @@
-# Arch Install
-Notes on quick installation of Arch Linux (to my personal preferences); integrated with some bash scripts to automate most of the process.
-
-# Arch Install w/ Scripts
+# Arch Install Notes w/ Scripts
 
 - Before booting from installation media, `secure boot` needs to be disabled (via BIOS).
 
