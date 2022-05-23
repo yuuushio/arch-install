@@ -37,6 +37,7 @@ mv -f picom.conf ~/.config/picom.conf
 mv -f nvim ~/.config/nvim
 mv nda ~/.themes/nda
 mv .zshrc ~/.zshrc
+sudo mv lightdm.conf /etc/lightdm/lightdm.conf
 sudo mv bluetooth/main.conf /etc/bluetooth/main.conf
 sudo mv pipewire.conf /usr/share/pipewire/pipewire.conf
 # -----------------------
@@ -84,5 +85,5 @@ systemctl enable bluetooth
 #sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 #yay -S downgrade otf-symbola nerd-fonts-complete typora-free lf-git timeshift jre ttf-ms-fonts virtualbox-ext-oracle visual-studio-code-bin ttf-mac-fonts libxft-bgra jdk powerline-fonts-git
 
-echo "---Configure LightDM; Restart PC---"
+echo "---Restart PC---"
 
