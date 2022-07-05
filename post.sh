@@ -3,18 +3,19 @@
 git clone https://aur.archlinux.org/yay.git
 cd yay;makepkg -si;cd;rm -rf yay
 
-sudo pacman -S xorg ttf-dejavu git polkit-gnome lightdm lightdm-gtk-greeter
+sudo pacman -S xorg ttf-dejavu git polkit-gnome
 
-sudo pacman -S arandr dmenu bash-completion bluez bluez-utils cups discord \
-dunst ffmpegthumbnailer firefox firewalld gcolor3 gedit gzip hplip jupyter-notebook \
-jupyterlab linux-headers lxappearance maim moreutils nautilus neofetch nfs-utils \
-nitrogen nodejs npm ntfs-3g pamixer pavucontrol pipewire pipewire-alsa pipewire-jack \
-pipewire-media-session pipewire-pulse pulsemixer python-pip qbittorrent \
-redshift rofi sqlitebrowser sxiv texlive-most thunar vlc xclip zathura zathura-pdf-mupdf \
-zsh tmux okular texstudio 
+sudo pacman -S arandr dmenu bluez bluez-utils cups \
+dunst ffmpegthumbnailer gcolor3 gzip hplip \
+linux-headers lxappearance-gtk3 maim moreutils nfs-utils \
+ntfs-3g pamixer pavucontrol pipewire pipewire-alsa pipewire-jack \
+pipewire-pulse pulsemixer python-pip qbittorrent \
+redshift rofi sxiv texlive-most thunar xclip zathura zathura-pdf-mupdf \
+zsh tmux texstudio
 
-yay -S neovim-nightly-bin picom-jonaburg-git
+yay -S neovim-nightly-bin picom-jonaburg-git ly brave-bin
 
+cd
 # install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # install typewritten theme
@@ -28,16 +29,14 @@ cd
 # -- install dots/configs
 git clone https://github.com/yuuushio/dots.git;cd dots
 
-mv dwmblocks ~/dwmblocks
-mv -f icons/default ~/.icons/default
-mv -f scripts ~/.dwm
-mv st ~/st
+mv dwmblocks ~/.config/
+# mv -f icons/default ~/.icons/default # error cause .icons file doesnt exist yet
+mv -f scripts/* ~/.dwm/
+mv st ~/.config/
 mv -f typewritten.zsh ~/.oh-my-zsh/custom/themes/typewritten/typewritten.zsh
 mv -f picom.conf ~/.config/picom.conf
-mv -f nvim ~/.config/nvim
-mv nda ~/.themes/nda
+mv -f nvim ~/.config/
 mv .zshrc ~/.zshrc
-sudo mv lightdm.conf /etc/lightdm/lightdm.conf
 sudo mv bluetooth/main.conf /etc/bluetooth/main.conf
 sudo mv pipewire.conf /usr/share/pipewire/pipewire.conf
 # -----------------------
@@ -56,8 +55,8 @@ rm -rf dots
 git clone https://github.com/yuuushio/dwm.git
 cd dwm;make;sudo make install;cd
 
-cd dwmblocks;make;sudo make install;cd
-cd st;make;sudo make install;cd
+cd ~/.config/st;make;sudo make clean install;cd
+cd ~/.config/dwmblocks;make;sudo make clean install;cd
 
 
 # XSessions and dwm.desktop
@@ -78,8 +77,9 @@ Icon=dwm
 Type=XSession
 EOF
 
-systemctl enable lightdm
+systemctl enable ly
 systemctl enable bluetooth
+systemctl --user --now enable wireplumber
 
 #sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 #sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
