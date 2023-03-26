@@ -15,42 +15,13 @@ zsh tmux texstudio
 
 yay -S neovim-nightly-bin picom-jonaburg-git ly brave-bin
 
-cd
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# install typewritten theme
-git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
-ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
-ln -s "$ZSH_CUSTOM/themes/typewritten/async.zsh" "$ZSH_CUSTOM/themes/async"
 
-
-cd
-
-# -- install dots/configs
-git clone https://github.com/yuuushio/dots.git;cd dots
-
-mv dwmblocks ~/.config/
-# mv -f icons/default ~/.icons/default # error cause .icons file doesnt exist yet
-mv -f scripts/* ~/.dwm/
-mv st ~/.config/
-mv -f typewritten.zsh ~/.oh-my-zsh/custom/themes/typewritten/typewritten.zsh
-mv -f picom.conf ~/.config/picom.conf
-mv -f nvim ~/.config/
-mv .zshrc ~/.zshrc
-sudo mv bluetooth/main.conf /etc/bluetooth/main.conf
-sudo mv pipewire.conf /usr/share/pipewire/pipewire.conf
-# -----------------------
-
-cd
-
-rm -rf dots
-
-#repos=( "st" )
-#for repo in ${repos[@]}
-#do
-#    git clone git://git.suckless.org/$repo
-#    cd $repo;make;sudo make install;cd ..
-#done
+repos=( "st" "dwm" )
+for repo in ${repos[@]}
+do
+    git clone git://git.suckless.org/$repo
+    cd $repo;make;sudo make install;cd ..
+done
 
 git clone https://github.com/yuuushio/dwm.git
 cd dwm;make;sudo make install;cd
