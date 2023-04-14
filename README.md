@@ -196,3 +196,7 @@ FastConnectable = true
 ```
 
 ### Pipewire Conf
+
+### Set DNS
+
+`nm-connection-editor`
