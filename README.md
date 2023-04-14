@@ -53,6 +53,9 @@ gdisk /dev/[disk-to-be-partitioned]
 ```
 
 Create a `GPT` if it doesn't automatically do so.
+```
+o
+```
 
 ### Partitions
 #### Partition 1 (EFI)
@@ -165,8 +168,10 @@ chmod +x *.sh
 ./post.sh
 ```
 
-## Virtual Box
-```shell
-sudo pacman -S virtualbox virtualbox-host-modules-arch
-yay -S virtualbox-ext-oracle
-```
+## Post Install
+
+### Emptty Conf
+
+### Bluetooth Conf
+
+### Pipewire Conf
