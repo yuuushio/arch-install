@@ -13,7 +13,8 @@ linux-headers lxappearance-gtk3 maim moreutils nfs-utils \
 ntfs-3g pamixer pavucontrol pipewire wireplumber pipewire-alsa pipewire-jack \
 pipewire-pulse pulsemixer python-pip qbittorrent \
 redshift rofi sxiv texlive-most xclip zathura zathura-pdf-mupdf \
-zsh tmux texstudio libmpdclient slock
+zsh tmux texstudio \
+libmpdclient slock feh
 
 install_oh_my_zsh() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
