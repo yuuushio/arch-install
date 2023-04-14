@@ -142,18 +142,19 @@ After making changes:
 sudo mkinitcpio -p linux 
 ```
 
-### Reconnecting using `nmcli`
-```shell
-nmcli device wifi list
-nmcli device wifi connect [network] password [password]
-```
-
 ### Reboot
 `exit` chroot.
 
 `reboot` the system.
 
 ## - Script 3 -
+
+
+### Reconnecting using `nmcli`
+```shell
+nmcli device wifi list
+nmcli device wifi connect [network] password [password]
+```
 
 Post installation:
 
@@ -171,7 +172,27 @@ chmod +x *.sh
 ## Post Install
 
 ### Emptty Conf
+Config at `sudo vim /etc/emptty/conf`
+
+```
+# uncomment and set your user
+DEFAULT_USER=<user>
+
+# uncomment or add and set your DE/WM
+DEFAULT_SESSION=dwm
+
+ENABLE_NUMLOCK=true
+```
 
 ### Bluetooth Conf
+`sudo vim /etc/bluetooth/main.conf`
+
+```
+AlwaysPairable=true
+
+ControllerMode = bredr
+
+FastConnectable = true
+```
 
 ### Pipewire Conf
