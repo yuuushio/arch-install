@@ -3,7 +3,7 @@
 - Before booting from installation media, `secure boot` needs to be disabled (via BIOS).
 
 ### Verify Boot Mode
-Verifying that you're running UEFI :
+Verifying that you're running UEFI:
 ```shell
 ls /sys/firmware/efi/efivars
 ```
@@ -18,7 +18,7 @@ iwctl # to enter iwd interactive prompt
 ```bash
 device list
 ```
-Scan the network; then list the found/available networks :
+Scan the network; then list the found/available networks:
 ```bash
 station [device-id] scan
 station [device-id] get-networks
@@ -30,7 +30,7 @@ station [device-id] connect [network-name]
 `exit` out of iwd.
 
 ### Ping
-Ping to verify that you're connected to the internet :
+Ping to verify that you're connected to the internet:
 
 ```shell
 ping archlinux.org
@@ -42,7 +42,7 @@ timedatectl set-ntp true
 ```
 
 ## Partition Disks
-List the connected devices :
+List the connected devices:
 ```shell
 fdisk -l
 ```
@@ -53,6 +53,7 @@ gdisk /dev/[disk-to-be-partitioned]
 ```
 
 Create a `GPT` if it doesn't automatically do so.
+
 ```
 o
 ```
@@ -196,7 +197,12 @@ FastConnectable = true
 ```
 
 ### Pipewire Conf
+From Gentoo wiki: `/usr/share/pipewire/pipewire.conf`
+
+Might need to disable wireplumber if pavucontrol is malfunctioning.
 
 ### Set DNS
 
 `nm-connection-editor`
+- `1.1.1.1`
+- `1.0.0.1`
