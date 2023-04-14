@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 git clone https://aur.archlinux.org/yay.git
 cd yay;makepkg -si;cd;rm -rf yay
 
@@ -72,8 +70,11 @@ Icon=dwm
 Type=XSession
 EOF
 
+yay -S emptty
+
 #systemctl enable ly
 systemctl enable --now bluetooth
+systemctl enable emptty
 systemctl --user enable --now pipewire.socket
 systemctl --user enable --now pipewire.service # Fix the typo "pipeiwre.service" to "pipewire.service"
 systemctl --user enable --now pipewire-pulse.socket
@@ -84,6 +85,11 @@ systemctl --user --now enable wireplumber
 cd
 git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1; cd nerd-fonts;sudo ./install.sh;cd ..;rm -rf nerd-fonts
 
+### TODOs ###
+# rofi config automation
+# dunst config automation
+# emptty config
+# bluetooth config
 
 sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
