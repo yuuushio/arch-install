@@ -206,3 +206,8 @@ Might need to disable wireplumber if pavucontrol is malfunctioning.
 `nm-connection-editor`
 - `1.1.1.1`
 - `1.0.0.1`
+
+### Virt-manager
+
+- Change from UEFI to bios.
+- Under "CPUs," ensure that the "Copy host CPU configuration" checkbox is unchecked. You can also try changing the "CPU model" to a different option, such as `qemu64`.
