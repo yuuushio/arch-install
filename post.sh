@@ -94,6 +94,7 @@ git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1; cd nerd-fonts;s
 
 sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+# https://github.com/yshui/picomhttps://github.com/yshui/picom; yay -S picom
 yay -S opencl-nvidia-470xx nvidia-470xx-dkms nvidia-470xx-utils otf-symbola jre ttf-ms-fonts ttf-mac-fonts libxft-bgra jdk powerline-fonts-git nsxiv neovim-nightly
 
 echo "---Restart PC---"
