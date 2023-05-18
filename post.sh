@@ -14,7 +14,7 @@ ntfs-3g pamixer pavucontrol pipewire wireplumber pipewire-alsa pipewire-jack \
 pipewire-pulse pulsemixer python-pip qbittorrent \
 redshift rofi sxiv texlive-most xclip zathura zathura-pdf-mupdf \
 zsh tmux texstudio \
-libmpdclient slock feh
+libmpdclient slock feh kitty
 
 install_oh_my_zsh() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -38,7 +38,10 @@ git clone https://github.com/yuuushio/Succless.git
 cd Succless
 
 # Declare an array containing the component directories
-components=("dwm" "st" "dwblocks")
+# components=("dwm" "st" "dwblocks")
+
+# Use kitty now -- better glyphs and font handling
+components=("dwm" "dwblocks")
 
 # Iterate over the components and build each one
 for component in "${components[@]}"; do
