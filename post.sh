@@ -12,15 +12,9 @@ dunst ffmpegthumbnailer gcolor3 gzip hplip \
 linux-headers lxappearance-gtk3 maim moreutils nfs-utils \
 ntfs-3g pamixer pavucontrol pipewire wireplumber pipewire-alsa pipewire-jack \
 pipewire-pulse pulsemixer python-pip qbittorrent \
-redshift rofi sxiv texlive-most xclip zathura zathura-pdf-mupdf \
-zsh tmux texstudio \
+redshift rofi sxiv xclip zathura zathura-pdf-mupdf \
+zsh tmux texstudio texlive nautilus nemo\
 libmpdclient slock feh kitty
-
-install_oh_my_zsh() {
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-}
-
-install_oh_my_zsh
 
 #repos=( "st" "dwm" )
 #for repo in ${repos[@]}
@@ -41,7 +35,7 @@ cd Succless
 # components=("dwm" "st" "dwblocks")
 
 # Use kitty now -- better glyphs and font handling
-components=("dwm" "dwblocks")
+components=("dwm" "dwblocks" "st")
 
 # Iterate over the components and build each one
 for component in "${components[@]}"; do
@@ -87,7 +81,7 @@ systemctl --user --now enable wireplumber
 
 # Install nerd fonts
 cd
-git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1; cd nerd-fonts;sudo ./install.sh;cd ..;rm -rf nerd-fonts
+git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1; cd nerd-fonts;./install.sh;cd ..;rm -rf nerd-fonts
 
 ### TODOs ###
 # rofi config automation
@@ -95,10 +89,13 @@ git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1; cd nerd-fonts;s
 # emptty config
 # bluetooth config
 
-sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
-sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+#sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+#sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+
 # https://github.com/yshui/picomhttps://github.com/yshui/picom; yay -S picom
-yay -S opencl-nvidia-470xx nvidia-470xx-dkms nvidia-470xx-utils otf-symbola jre ttf-ms-fonts ttf-mac-fonts libxft-bgra jdk powerline-fonts-git nsxiv neovim-nightly
+yay -S neovim-nightly
+# yay -S opencl-nvidia-470xx nvidia-470xx-dkms nvidia-470xx-utils
+yay -S otf-symbola jre ttf-ms-fonts ttf-mac-fonts libxft-bgra jdk powerline-fonts-git nsxiv
 
 echo "---Restart PC---"
 
