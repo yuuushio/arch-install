@@ -13,8 +13,8 @@ linux-headers lxappearance-gtk3 maim moreutils nfs-utils \
 ntfs-3g pamixer pavucontrol pipewire wireplumber pipewire-alsa pipewire-jack \
 pipewire-pulse pulsemixer python-pip qbittorrent \
 redshift rofi sxiv xclip zathura zathura-pdf-mupdf \
-zsh tmux texstudio texlive nautilus nemo\
-libmpdclient slock feh kitty
+zsh tmux texstudio texlive nautilus nemo \
+libmpdclient slock feh kitty webkit2gtk featherpad
 
 #repos=( "st" "dwm" )
 #for repo in ${repos[@]}
