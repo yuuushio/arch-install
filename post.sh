@@ -9,7 +9,7 @@ sudo pacman -S xorg ttf-dejavu git polkit-gnome
 
 sudo pacman -S arandr dmenu bluez bluez-utils cups \
 dunst ffmpegthumbnailer gcolor3 gzip hplip \
-linux-headers lxappearance-gtk3 maim moreutils nfs-utils \
+linux-headers lxappearance-gtk3 gtk-engine-murrine maim moreutils nfs-utils \
 ntfs-3g pamixer pavucontrol pipewire wireplumber pipewire-alsa pipewire-jack \
 pipewire-pulse pulsemixer python-pip qbittorrent \
 redshift rofi sxiv xclip zathura zathura-pdf-mupdf \
