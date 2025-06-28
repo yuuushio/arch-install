@@ -94,6 +94,15 @@ git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1; cd nerd-fonts;.
 npm config set prefix  "$XDG_DATA_HOME/npm"
 npm config set cache   "$XDG_CACHE_HOME/npm"
 
+#yarn --version        # ≤1.x ⇒ Classic, otherwise Berry
+#install -d "$YARN_CACHE_FOLDER" "$XDG_DATA_HOME/yarn/bin"
+
+# Point Yarn there for good and copy anything you care about.
+#yarn config set cache-folder  "$YARN_CACHE_FOLDER"              # Classic & Berry :contentReference[oaicite:1]{index=1}
+#yarn config set prefix        "$XDG_DATA_HOME/yarn"             # Classic only; Berry ignores it :contentReference[oaicite:2]{index=2}
+#old=$(yarn global dir 2>/dev/null || true)                      # Classic prints its current dir :contentReference[oaicite:3]{index=3}
+#[ -d "$old" ] && rsync -a "$old/" "$XDG_DATA_HOME/yarn/"
+
 # https://github.com/yshui/picomhttps://github.com/yshui/picom; yay -S picom
 yay -S neovim-nightly
 # yay -S opencl-nvidia-470xx nvidia-470xx-dkms nvidia-470xx-utils
