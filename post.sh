@@ -91,6 +91,8 @@ git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1; cd nerd-fonts;.
 
 #sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 #sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+npm config set prefix  "$XDG_DATA_HOME/npm"
+npm config set cache   "$XDG_CACHE_HOME/npm"
 
 # https://github.com/yshui/picomhttps://github.com/yshui/picom; yay -S picom
 yay -S neovim-nightly
